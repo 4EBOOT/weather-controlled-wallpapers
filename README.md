@@ -8,9 +8,10 @@ This is a little python script that changes your system wallpaper(currently work
 2. Download the [source code](https://github.com/4EBOOT/weather-controlled-wallpapers/archive/master.zip).
 3. Unzip it wherever you want.
 4. Before you add `weather-controlled-wallpapers.py` script to autoload, you can test it by modifying debug values in it. Example:
-	```debug = True
-	debug_value = "Sunny"```
-
+```
+debug = True
+debug_value = "Sunny"
+```
 ### How can I modify/change wallpapers?
 Script already goes with pack of predownloaded in `wallpapers/` folder. But you can modify/change. For that you need to place your wallpaper in `wallpapers/` folder and rename it to weather you want to replace(all names of weather can be found [here](https://github.com/chubin/wttr.in/blob/master/lib/constants.py)).
 You can suggest to change some of preinstalled wallpapers or add them(Discord: Reboot#8695).
