@@ -1,20 +1,27 @@
 import dbus
 import requests
 import json
-import time
 from datetime import date, datetime, timedelta
 
 
 
-#changable variables
-wallpaper_folder ="/home/reboot/Development/wallpaper-changer/wallpapers/"
+#---------changable variables---------
+
+#time between checking weather(in minutes)
+check_time = 60
+
+#path to folder with wallpapers
+wallpaper_folder = os.getcwd() + "/wallpapers/"
+
 #season_setting - the wallpapers with similar weather, but different seasons will be different(WIP)
 season_check = False
-check_time = 3
+
+#debug setting for testing specified wallpapers and weather
 debug = False
 debug_value = "Fog"
 
-#don't change this variables!
+
+#---------not changable variables---------
 Y = 2000
 seasons = [('winter', (date(Y,  1,  1),  date(Y,  3, 20))),
            ('spring', (date(Y,  3, 21),  date(Y,  6, 20))),
@@ -44,18 +51,23 @@ def get_season(now):
     return next(season for season, (start, end) in seasons
                 if start <= now <= end)
 
+
+#function for changing system wallpaper that requires name of wallpaper
 def change_wallpaper(wallpaper_name):
   session_bus = dbus.SessionBus()
   plasma = dbus.Interface(session_bus.get_object('org.kde.plasmashell', '/PlasmaShell'), dbus_interface = 'org.kde.PlasmaShell')
   plasma.evaluateScript(jscript % (wallpaper_folder, wallpaper_name))
   current_wallpaper = wallpaper_name
 
+
+#function for checking weather from wttr.in
 def check_weather():
   get_weather = requests.get("https://www.wttr.in/?format=j1")
   search = get_weather.json()
   current_weather = search["current_condition"][0]["weatherDesc"][0]["value"] if not debug else debug_value
   current_season = get_season(date.today()) if season_check else ""
   return current_season + current_weather
+
 
 #main loop
 while True:
