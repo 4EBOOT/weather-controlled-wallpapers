@@ -8,7 +8,7 @@ This is a little python script that changes your system wallpaper(currently work
 2. Download the [source code](https://github.com/4EBOOT/weather-controlled-wallpapers/archive/master.zip).
 3. Unzip it wherever you want.
 4. Before you add `weather-controlled-wallpapers.py` script to autoload, you can test it by modifying debug values in it. Example:
-```
+```python
 debug = True
 debug_value = "Sunny"
 ```
