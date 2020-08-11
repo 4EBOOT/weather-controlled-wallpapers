@@ -22,6 +22,7 @@ debug_value = "Fog"
 
 
 #---------not changable variables---------
+
 Y = 2000
 seasons = [('winter', (date(Y,  1,  1),  date(Y,  3, 20))),
            ('spring', (date(Y,  3, 21),  date(Y,  6, 20))),
@@ -42,6 +43,9 @@ for (i=0;i<Desktops.length;i++) {
         d.writeConfig("Image", "file://%s%s.png");
 }
 """
+
+#---------functions---------
+
 
 #function for getting current season(WIP)
 def get_season(now):
