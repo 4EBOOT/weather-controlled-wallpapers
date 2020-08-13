@@ -13,5 +13,5 @@ debug = True
 debug_value = "Sunny"
 ```
 ### How can I modify/change wallpapers?
-Script already goes with pack of predownloaded in `wallpapers/` folder. But you can modify/change. For that you need to place your wallpaper in `wallpapers/` folder and rename it to weather you want to replace(all names of weather can be found [here](https://github.com/chubin/wttr.in/blob/master/lib/constants.py)).
+Script already goes with pack of predownloaded in `wallpapers/` folder. But you can modify/change(but make sure your wallpaper is .png). For that you need to place your wallpaper in `wallpapers/` folder and rename it to weather you want to replace(all names of weather can be found [here](https://github.com/chubin/wttr.in/blob/master/lib/constants.py)).
 You can suggest to change some of preinstalled wallpapers or add them(Discord: Reboot#8695).
